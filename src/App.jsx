@@ -1,5 +1,7 @@
+import SimpleCalculator from "./pages/SimpleCalculator"
+
 function App() {
-  return <p>Simple Calculator</p>
+  return <SimpleCalculator />
 }
 
 export default App
