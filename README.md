@@ -67,6 +67,7 @@ Once your pull request is approved and any requested changes are addressed, your
  | [React](https://es.react.dev/)
  | [Prettier](https://prettier.io/)
  | [ESLint](https://eslint.org/)
+ | [MUI](https://mui.com/)
  |
 
 ## Authors
