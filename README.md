@@ -18,7 +18,7 @@ Click the "Fork" button at the upper-right corner of the repository page. This a
 Clone your forked repository to your local machine using this command:
 
 ```bash
-  git clone https://github.com/SantiSB/Simple Calculator.git
+  git clone https://github.com/SantiSB/simple-calculator.git
 ```
 
 ### Switch to the Develop Branch: 
