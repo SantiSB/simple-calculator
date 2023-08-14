@@ -18,7 +18,7 @@ Click the "Fork" button at the upper-right corner of the repository page. This a
 Clone your forked repository to your local machine using this command:
 
 ```bash
-  git clone https://github.com/SantiSB/Simple Calculator.git
+  git clone https://github.com/SantiSB/simple-calculator.git
 ```
 
 ### Switch to the Develop Branch: 
@@ -67,6 +67,7 @@ Once your pull request is approved and any requested changes are addressed, your
  | [React](https://es.react.dev/)
  | [Prettier](https://prettier.io/)
  | [ESLint](https://eslint.org/)
+ | [MUI](https://mui.com/)
  |
 
 ## Authors
