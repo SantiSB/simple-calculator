@@ -90,7 +90,7 @@ const SimpleCalculator = () => {
           </Grid>
         </div>
       </Container>
-      <Notification open={open} setOpen={setOpen} />
+      <Notification open={open} setOpen={setOpen} notificationText={'Error'} />
     </div>
   )
 }

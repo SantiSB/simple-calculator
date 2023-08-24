@@ -1,14 +1,14 @@
+import React from 'react'
 import { Alert, Snackbar } from '@mui/material'
 
-const Notification = ({ open, setOpen }) => {
-
+const Notification = ({ open, setOpen, notificationText }) => {
   const handleClose = (reason) => {
     if (reason === 'clickaway') {
       return
     }
     setOpen(false)
   }
-  
+
   return (
     <Snackbar open={open} autoHideDuration={6000} onClose={handleClose}>
       <Alert
@@ -20,7 +20,7 @@ const Notification = ({ open, setOpen }) => {
           alignItems: 'center',
         }}
       >
-        Is not possible type more than 6 digits
+        {notificationText}
       </Alert>
     </Snackbar>
   )
