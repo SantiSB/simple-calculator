@@ -4,84 +4,26 @@ import { Container, Grid } from '@mui/material'
 import Notification from './components/Notification'
 import CalculatorButton from './components/CalculatorButton'
 import DisplayScreen from './components/DisplayScreen'
+import useCalculator from './hooks/useCalculator'
+import { BUTTONS_DATA } from './utils/buttonsData'
 
 const SimpleCalculator = () => {
-  const [value, setValue] = useState(0)
-  const [operator, setOperator] = useState()
   const [open, setOpen] = useState(false)
-
-  const handleOperator = (operatorValue) => {
-    setOperator(operatorValue)
-    setValue(0)
-  }
-
-  const handleNumberClick = (buttonValue) => {
-    if (value === 0 || operator) {
-      setValue(buttonValue)
-    } else if (value.length <= 6) {
-      setValue(value + buttonValue)
-    } else {
-      setOpen(true)
-    }
-  }
-
-  const handleSpecialClick = (buttonValue) => {
-    const specialHandlers = {
-      '+/-': handleToggleSign,
-      '%': handlePercentage,
-      AC: handleClear,
-    }
-
-    const specialHandler = specialHandlers[buttonValue]
-    if (specialHandler) {
-      specialHandler()
-    } else {
-      handleOperator(buttonValue)
-    }
-  }
-
-  const handleToggleSign = () => {
-    setValue(value * -1)
-  }
-
-  const handlePercentage = () => {
-    setValue(value / 100)
-  }
-
-  const handleClear = () => {
-    setValue(0)
-    setOperator()
-  }
-
-  const handleButtonClick = (buttonValue) => {
-    if (typeof buttonValue === 'number' || buttonValue === '.') {
-      handleNumberClick(buttonValue)
-    } else {
-      handleSpecialClick(buttonValue)
-    }
-  }
-
-  const buttonData = [
-    ['%', 'CE', 'C', '<<'],
-    [7, 8, 9, 'X'],
-    [4, 5, 6, '-'],
-    [1, 2, 3, '+'],
-    ['+/-', 0, '.', '='],
-  ]
+  const { operation, handleButtonClick } = useCalculator()
 
   return (
     <div className='calculator'>
       <Container maxWidth='xs'>
         <div className='container'>
-          <DisplayScreen value={value} />
+          <DisplayScreen value={operation} />
           <Grid container spacing={2}>
-            {buttonData.map((row, rowIndex) => (
+            {BUTTONS_DATA.map((row, rowIndex) => (
               <Grid key={rowIndex} container item justifyContent='center'>
-                {row.map((buttonValue, columnIndex) => (
+                {row.map((buttonData, columnIndex) => (
                   <Grid key={columnIndex} item xs={3}>
                     <CalculatorButton
                       handleButtonClick={handleButtonClick}
-                      buttonValue={buttonValue}
+                      buttonData={buttonData}
                     />
                   </Grid>
                 ))}

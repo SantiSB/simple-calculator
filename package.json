@@ -22,6 +22,7 @@
     "@mui/material": "^5.14.5",
     "@testing-library/user-event": "^14.4.3",
     "happy-dom": "^10.10.2",
+    "mathjs": "^11.10.0",
     "react": "^18.2.0",
     "react-dom": "^18.2.0"
   },

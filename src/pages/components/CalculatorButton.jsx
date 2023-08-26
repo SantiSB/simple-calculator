@@ -1,19 +1,9 @@
 import { Button } from '@mui/material'
 
-const CalculatorButton = ({ handleButtonClick, buttonValue }) => {
+const CalculatorButton = ({ handleButtonClick, buttonData }) => {
   return (
-    <Button
-      className={`${
-        typeof buttonValue === 'number'
-          ? 'number'
-          : buttonValue === '='
-          ? 'calculate'
-          : 'function'
-      }`}
-      onClick={() => handleButtonClick(buttonValue)}
-      value={buttonValue}
-    >
-      {buttonValue}
+    <Button onClick={() => handleButtonClick(buttonData)} value={buttonData.value}>
+      {buttonData.value}
     </Button>
   )
 }
