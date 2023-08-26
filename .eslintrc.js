@@ -5,33 +5,24 @@ module.exports = {
   },
   settings: { react: { version: 'detect' } },
   extends: [
-    'standard',
     'plugin:react/recommended',
-    'plugin:react-hooks/recommended',
     'plugin:react/jsx-runtime',
+    'plugin:react-hooks/recommended',
+    'standard',
     'eslint-config-prettier',
   ],
-  overrides: [
-    {
-      files: ['**/*.js', '**/*.jsx'],
-      rules: {
-        'react/prop-types': 'off',
-      },
-    },
-    {
-      env: {
-        node: true,
-      },
-      files: ['.eslintrc.js', '.eslintrc.cjs'],
-      parserOptions: {
-        sourceType: 'script',
-      },
-    },
-  ],
+
   ignorePatterns: ['**/*.test.js', '**/*.test.jsx'],
   parserOptions: {
     ecmaVersion: 12,
+    ecmaFeatures: {
+      jsx: true,
+    },
     sourceType: 'module',
   },
-  plugins: ['react'],
-};
+  plugins: ['react', 'eslint-plugin-import'],
+  rules: {
+    'react/prop-types': 'off',
+    'no-unused-vars': ['off', { varsIgnorePattern: '^React$' }],
+  },
+}
