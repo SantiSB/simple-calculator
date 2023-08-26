@@ -3,14 +3,13 @@ import { evaluate } from 'mathjs'
 
 const useCalculator = () => {
   const [openAlert, setOpenAlert] = useState(false)
-  const [operation, setOperation] = useState('')
+  const [operation, setOperation] = useState('0')
 
   const handleEquals = () => {
     try {
       setOperation(evaluate(operation).toString())
     } catch (error) {
       setOpenAlert(true)
-      console.log(error)
     }
   }
 
@@ -31,7 +30,9 @@ const useCalculator = () => {
   }
 
   const handleDefault = (buttonValue) => {
-    setOperation(operation.concat(buttonValue))
+    operation === '0'
+      ? setOperation(buttonValue.toString())
+      : setOperation(operation.concat(buttonValue))
   }
 
   const handleButtonClicked = (buttonData) => {
@@ -53,8 +54,8 @@ const useCalculator = () => {
     operation,
     handleButtonClicked,
     openAlert,
-    setOpenAlert
+    setOpenAlert,
   }
 }
 
-export default useCalculator;
+export default useCalculator

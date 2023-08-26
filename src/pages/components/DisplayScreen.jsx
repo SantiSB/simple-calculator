@@ -5,11 +5,14 @@ const DisplayScreen = ({ value }) => {
     <Typography
       variant='h3'
       className='display'
-      style={{
+      sx={{
         display: 'flex',
-        alignItems: 'center',
-        height: '7rem',
-        width: '100%',
+        alignContent: 'center',
+        justifyContent: 'right',
+        height: 70,
+        width: 'auto',
+        overflowX: 'auto',
+        whiteSpace: 'nowrap',
       }}
     >
       {value}

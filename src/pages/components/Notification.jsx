@@ -18,7 +18,7 @@ const Notification = ({ openAlert, setOpenAlert }) => {
       <Alert
         onClose={handleCloseAlert}
         severity='error'
-        style={{
+        sx={{
           display: 'flex',
           justifyContent: 'center',
           alignItems: 'center',

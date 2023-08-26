@@ -26,7 +26,7 @@ export const BUTTONS_DATA = [
   [
     { value: '0', type: 'number' },
     { value: '.', type: 'number' },
-    { value: '+/-', type: 'operator' },
+    { value: '+/-', type: 'number' },
     { value: '=', type: 'operator' },
   ],
 ]

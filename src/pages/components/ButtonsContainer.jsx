@@ -5,11 +5,16 @@ import CalculatorButton from './CalculatorButton'
 
 const ButtonsContainer = ({ handleButtonClicked }) => {
   return (
-    <Grid container spacing={2}>
+    <Grid container spacing={1}>
       {BUTTONS_DATA.map((row, rowIndex) => (
         <Grid key={rowIndex} container item justifyContent='center'>
           {row.map((buttonData, columnIndex) => (
-            <Grid key={columnIndex} item xs={3}>
+            <Grid
+              key={columnIndex}
+              item
+              xs={3}
+              sx={{ display: ' flex', justifyContent: 'center' }}
+            >
               <CalculatorButton
                 handleButtonClicked={handleButtonClicked}
                 buttonData={buttonData}
