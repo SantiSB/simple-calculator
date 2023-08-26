@@ -1,18 +1,22 @@
 import React from 'react'
 import { Alert, Snackbar } from '@mui/material'
 
-const Notification = ({ open, setOpen, notificationText }) => {
-  const handleClose = (reason) => {
+const Notification = ({ openAlert, setOpenAlert }) => {
+  const handleCloseAlert = (reason) => {
     if (reason === 'clickaway') {
       return
     }
-    setOpen(false)
+    setOpenAlert(false)
   }
 
   return (
-    <Snackbar open={open} autoHideDuration={6000} onClose={handleClose}>
+    <Snackbar
+      open={openAlert}
+      autoHideDuration={6000}
+      onClose={handleCloseAlert}
+    >
       <Alert
-        onClose={handleClose}
+        onClose={handleCloseAlert}
         severity='error'
         style={{
           display: 'flex',
@@ -20,7 +24,7 @@ const Notification = ({ open, setOpen, notificationText }) => {
           alignItems: 'center',
         }}
       >
-        {notificationText}
+        {'Unexpected end of expression'}
       </Alert>
     </Snackbar>
   )

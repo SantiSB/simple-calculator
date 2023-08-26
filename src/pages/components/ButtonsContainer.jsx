@@ -3,7 +3,7 @@ import React from 'react'
 import { BUTTONS_DATA } from '../utils/buttonsData'
 import CalculatorButton from './CalculatorButton'
 
-const ButtonsContainer = ({ handleButtonClick }) => {
+const ButtonsContainer = ({ handleButtonClicked }) => {
   return (
     <Grid container spacing={2}>
       {BUTTONS_DATA.map((row, rowIndex) => (
@@ -11,7 +11,7 @@ const ButtonsContainer = ({ handleButtonClick }) => {
           {row.map((buttonData, columnIndex) => (
             <Grid key={columnIndex} item xs={3}>
               <CalculatorButton
-                handleButtonClick={handleButtonClick}
+                handleButtonClicked={handleButtonClicked}
                 buttonData={buttonData}
               />
             </Grid>

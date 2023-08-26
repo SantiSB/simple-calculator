@@ -2,10 +2,16 @@ import { useState } from 'react'
 import { evaluate } from 'mathjs'
 
 const useCalculator = () => {
+  const [openAlert, setOpenAlert] = useState(false)
   const [operation, setOperation] = useState('')
 
   const handleEquals = () => {
-    setOperation(evaluate(operation).toString())
+    try {
+      setOperation(evaluate(operation).toString())
+    } catch (error) {
+      setOpenAlert(true)
+      console.log(error)
+    }
   }
 
   const handleClear = () => {
@@ -28,7 +34,7 @@ const useCalculator = () => {
     setOperation(operation.concat(buttonValue))
   }
 
-  const handleButtonClick = (buttonData) => {
+  const handleButtonClicked = (buttonData) => {
     const buttonActions = {
       '=': handleEquals,
       C: handleClear,
@@ -45,7 +51,9 @@ const useCalculator = () => {
 
   return {
     operation,
-    handleButtonClick,
+    handleButtonClicked,
+    openAlert,
+    setOpenAlert
   }
 }
 
