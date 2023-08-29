@@ -38,6 +38,7 @@ const DisplayScreen = ({ value }) => {
       sx={{
         display: 'flex',
         alignItems: 'center',
+        justifyContent: 'center',
         height: 70,
         marginBottom: 3,
         width: '100%',

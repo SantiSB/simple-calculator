@@ -13,7 +13,6 @@ const SimpleCalculator = () => {
   return (
     <>
       <Container
-        maxWidth='xs'
         sx={{
           backgroundColor: theme.palette.black.main,
           color: theme.palette.white.main,
@@ -23,21 +22,21 @@ const SimpleCalculator = () => {
           alignItems: 'center',
           minHeight: '100vh',
           overflow: 'hidden',
-          width: 350
+          width: 350,
         }}
       >
         <Box
           sx={{
             border: `2px solid ${theme.palette.gray.main}`,
-            p: 2,
             borderRadius: 5,
             maxWidth: '95%',
-            overflow: 'auto',
             maxHeight: '80vh',
           }}
         >
-          <DisplayScreen value={operation} />
-          <ButtonsContainer handleButtonClicked={handleButtonClicked} />
+          <Box sx={{ margin: 1.5 }}>
+            <DisplayScreen value={operation} />
+            <ButtonsContainer handleButtonClicked={handleButtonClicked} />
+          </Box>
         </Box>
       </Container>
       <Notification openAlert={openAlert} setOpenAlert={setOpenAlert} />
