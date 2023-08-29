@@ -14,11 +14,11 @@ const useCalculator = () => {
   }
 
   const handleClear = () => {
-    setOperation('')
+    setOperation('0')
   }
 
   const handleBackspace = () => {
-    setOperation(operation.substring(0, operation.length - 1))
+    setOperation(operation.length > 1 ? operation.slice(0, -1) : '0')
   }
 
   const handlePercentage = () => {
