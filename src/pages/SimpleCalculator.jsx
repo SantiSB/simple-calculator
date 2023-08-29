@@ -30,8 +30,9 @@ const SimpleCalculator = () => {
             border: `2px solid ${theme.palette.gray.main}`,
             p: 2.5,
             borderRadius: 5,
-            width: '100%', 
+            width: '90%',
             overflow: 'auto',
+            maxHeight: '80vh',
           }}
         >
           <DisplayScreen value={operation} />
