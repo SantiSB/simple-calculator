@@ -10,9 +10,11 @@ const theme = createTheme({
     },
     gray: {
       main: '#3A3A3A',
+      secondary: '#666666'
     },
     orange: {
       main: '#FFA500',
+      secondary: '#FFC054'
     },
   },
 })
