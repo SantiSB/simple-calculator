@@ -1,23 +1,73 @@
-import React from 'react'
-import { Typography } from '@mui/material'
+import React, { useState, useEffect } from 'react'
+import { Typography, Box, useTheme } from '@mui/material'
 
 const DisplayScreen = ({ value }) => {
+  const theme = useTheme()
+  const [containerRef, setContainerRef] = useState(null)
+
+  useEffect(() => {
+    if (containerRef) {
+      containerRef.scrollLeft =
+        containerRef.scrollWidth - containerRef.clientWidth
+    }
+
+    const handleKeyDown = (event) => {
+      if (containerRef) {
+        if (event.key === 'ArrowLeft') {
+          containerRef.scrollBy({
+            left: -10,
+          })
+        } else if (event.key === 'ArrowRight') {
+          containerRef.scrollBy({
+            left: 10,
+          })
+        }
+      }
+    }
+
+    window.addEventListener('keydown', handleKeyDown)
+
+    return () => {
+      window.removeEventListener('keydown', handleKeyDown)
+    }
+  }, [containerRef, value])
+
   return (
-    <Typography
-      variant='h3'
-      className='display'
+    <Box
+      ref={setContainerRef}
       sx={{
         display: 'flex',
-        alignContent: 'center',
-        justifyContent: 'right',
+        alignItems: 'center',
+        justifyContent: 'center',
         height: 70,
-        width: 'auto',
+        marginBottom: 3,
+        width: '100%',
         overflowX: 'auto',
-        whiteSpace: 'nowrap',
+        overflowY: 'hidden',
+        scrollbarWidth: 'thin',
+        '&::-webkit-scrollbar': {
+          height: '3px',
+        },
+        '&::-webkit-scrollbar-track': {
+          background: `${theme.palette.gray.main}`,
+        },
+        '&::-webkit-scrollbar-thumb': {
+          background: `${theme.palette.white.main}`,
+          borderRadius: '2px',
+        },
       }}
     >
-      {value}
-    </Typography>
+      <Typography
+        variant='h3'
+        className='display'
+        sx={{
+          whiteSpace: 'nowrap',
+          marginLeft: 'auto',
+        }}
+      >
+        {value}
+      </Typography>
+    </Box>
   )
 }
 

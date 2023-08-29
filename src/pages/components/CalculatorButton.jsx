@@ -1,25 +1,32 @@
-import { Button, Typography, useTheme } from '@mui/material'
+import { Button, Typography } from '@mui/material'
+import { styled } from '@mui/material/styles'
 
 const CalculatorButton = ({ handleButtonClicked, buttonData }) => {
-  const theme = useTheme()
+  const ColorButton = styled(Button)(({ theme }) => ({
+    color: theme.palette.white.main,
+    backgroundColor:
+      buttonData.type === 'number'
+        ? theme.palette.gray.main
+        : theme.palette.orange.main,
+    '&:hover': {
+      backgroundColor:
+        buttonData.type === 'number'
+          ? theme.palette.gray.secondary
+          : theme.palette.orange.secondary,
+    },
+    borderRadius: 50,
+    height: 50,
+    width: 30,
+  }))
 
   return (
-    <Button
+    <ColorButton
+      variant='contained'
       onClick={() => handleButtonClicked(buttonData)}
       value={buttonData.value}
-      sx={{
-        color: theme.palette.white.main,
-        background:
-          buttonData.type === 'number'
-            ? theme.palette.gray.main
-            : theme.palette.orange.main,
-        borderRadius: 50,
-        height: 50,
-        width: 50,
-      }}
     >
       <Typography>{buttonData.value}</Typography>
-    </Button>
+    </ColorButton>
   )
 }
 
