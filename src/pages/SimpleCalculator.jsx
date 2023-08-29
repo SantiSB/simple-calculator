@@ -23,14 +23,15 @@ const SimpleCalculator = () => {
           alignItems: 'center',
           minHeight: '100vh',
           overflow: 'hidden',
+          width: 350
         }}
       >
         <Box
           sx={{
             border: `2px solid ${theme.palette.gray.main}`,
-            p: 2.5,
+            p: 2,
             borderRadius: 5,
-            width: '90%',
+            maxWidth: '95%',
             overflow: 'auto',
             maxHeight: '80vh',
           }}

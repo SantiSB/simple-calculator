@@ -16,7 +16,7 @@ const CalculatorButton = ({ handleButtonClicked, buttonData }) => {
     },
     borderRadius: 50,
     height: 50,
-    width: 50,
+    width: 30,
   }))
 
   return (

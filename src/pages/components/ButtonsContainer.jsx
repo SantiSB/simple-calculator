@@ -7,7 +7,7 @@ const ButtonsContainer = ({ handleButtonClicked }) => {
   return (
     <Grid container spacing={1}>
       {BUTTONS_DATA.map((row, rowIndex) => (
-        <Grid key={rowIndex} container item justifyContent='center'>
+        <Grid key={rowIndex} container item justifyContent='center' spacing={1}>
           {row.map((buttonData, columnIndex) => (
             <Grid
               key={columnIndex}
