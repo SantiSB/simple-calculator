@@ -5,18 +5,21 @@ import Notification from './Notification'
 const mockSetOpenAlert = jest.fn()
 
 describe('Notification component', () => {
-  it('renders without errors', () => {
+  it('should open snackbar', async () => {
+    render(<Notification openAlert={false} setOpenAlert={mockSetOpenAlert} />)
+    mockSetOpenAlert(true)
+    await waitFor(() => {
+      expect(mockSetOpenAlert).toHaveBeenCalledWith(true)
+    })
+  })
+  it('should display the error message', () => {
     render(<Notification openAlert={true} setOpenAlert={mockSetOpenAlert} />)
+
+    const errorMessage = document.querySelector('.MuiAlert-message')
+    expect(errorMessage.textContent).toBe('Unexpected end of expression')
   })
 
-  it('displays the error message', () => {
-    render(<Notification openAlert={true} setOpenAlert={mockSetOpenAlert} />)
-
-    const errorMessage = document.querySelector('.MuiAlert-message');
-    expect(errorMessage.textContent).toBe('Unexpected end of expression');
-  })
-
-  it('closes the notification on clicking close button', async () => {
+  it('should close the notification on clicking close button', async () => {
     render(<Notification openAlert={true} setOpenAlert={mockSetOpenAlert} />)
 
     const closeButton = screen.getByRole('button', { name: 'Close' })
@@ -27,7 +30,7 @@ describe('Notification component', () => {
     })
   })
 
-  it('closes the notification after autoHideDuration', async () => {
+  it('should close the notification after autoHideDuration', async () => {
     jest.useFakeTimers()
 
     render(<Notification openAlert={true} setOpenAlert={mockSetOpenAlert} />)
