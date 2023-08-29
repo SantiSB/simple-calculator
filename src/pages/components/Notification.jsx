@@ -2,10 +2,7 @@ import React from 'react'
 import { Alert, Snackbar } from '@mui/material'
 
 const Notification = ({ openAlert, setOpenAlert }) => {
-  const handleCloseAlert = (reason) => {
-    if (reason === 'clickaway') {
-      return
-    }
+  const handleCloseAlert = () => {
     setOpenAlert(false)
   }
 
