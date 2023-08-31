@@ -59,6 +59,7 @@ const DisplayScreen = ({ value }) => {
         sx={{
           whiteSpace: 'nowrap',
           marginLeft: 'auto',
+          width: '100%'
         }}
       >
         {value}
