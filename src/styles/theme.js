@@ -5,14 +5,14 @@ const theme = createTheme({
     black: {
       main: '#000000',
     },
-    white: {
+    primary: {
       main: '#FFFFFF',
     },
-    gray: {
+    grey: {
       main: '#3A3A3A',
       secondary: '#666666'
     },
-    orange: {
+    secondary: {
       main: '#FFA500',
       secondary: '#FFC054'
     },

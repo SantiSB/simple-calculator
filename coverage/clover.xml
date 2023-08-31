@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<coverage generated="1693437376647" clover="3.2.0">
+  <project timestamp="1693437376647" name="All files">
+    <metrics statements="30" coveredstatements="25" conditionals="12" coveredconditionals="6" methods="12" coveredmethods="11" elements="54" coveredelements="42" complexity="0" loc="30" ncloc="30" packages="2" files="5" classes="5"/>
+    <package name="components">
+      <metrics statements="29" coveredstatements="24" conditionals="12" coveredconditionals="6" methods="12" coveredmethods="11"/>
+      <file name="ButtonsContainer.jsx" path="C:\Software Development\GitHub\simple-calculator\src\pages\components\ButtonsContainer.jsx">
+        <metrics statements="4" coveredstatements="4" conditionals="0" coveredconditionals="0" methods="3" coveredmethods="3"/>
+        <line num="6" count="1" type="stmt"/>
+        <line num="7" count="2" type="stmt"/>
+        <line num="10" count="10" type="stmt"/>
+        <line num="12" count="40" type="stmt"/>
+      </file>
+      <file name="CalculatorButton.jsx" path="C:\Software Development\GitHub\simple-calculator\src\pages\components\CalculatorButton.jsx">
+        <metrics statements="5" coveredstatements="5" conditionals="4" coveredconditionals="4" methods="3" coveredmethods="3"/>
+        <line num="5" count="2" type="stmt"/>
+        <line num="6" count="42" type="stmt"/>
+        <line num="7" count="42" type="stmt"/>
+        <line num="24" count="42" type="stmt"/>
+        <line num="27" count="2" type="stmt"/>
+      </file>
+      <file name="DisplayScreen.jsx" path="C:\Software Development\GitHub\simple-calculator\src\pages\components\DisplayScreen.jsx">
+        <metrics statements="16" coveredstatements="11" conditionals="8" coveredconditionals="2" methods="4" coveredmethods="3"/>
+        <line num="4" count="1" type="stmt"/>
+        <line num="5" count="2" type="stmt"/>
+        <line num="6" count="2" type="stmt"/>
+        <line num="8" count="2" type="stmt"/>
+        <line num="9" count="2" type="cond" truecount="2" falsecount="0"/>
+        <line num="10" count="1" type="stmt"/>
+        <line num="14" count="2" type="stmt"/>
+        <line num="15" count="0" type="cond" truecount="0" falsecount="2"/>
+        <line num="16" count="0" type="cond" truecount="0" falsecount="2"/>
+        <line num="17" count="0" type="stmt"/>
+        <line num="20" count="0" type="cond" truecount="0" falsecount="2"/>
+        <line num="21" count="0" type="stmt"/>
+        <line num="28" count="2" type="stmt"/>
+        <line num="30" count="2" type="stmt"/>
+        <line num="31" count="2" type="stmt"/>
+        <line num="35" count="2" type="stmt"/>
+      </file>
+      <file name="Notification.jsx" path="C:\Software Development\GitHub\simple-calculator\src\pages\components\Notification.jsx">
+        <metrics statements="4" coveredstatements="4" conditionals="0" coveredconditionals="0" methods="2" coveredmethods="2"/>
+        <line num="4" count="1" type="stmt"/>
+        <line num="5" count="4" type="stmt"/>
+        <line num="6" count="2" type="stmt"/>
+        <line num="9" count="4" type="stmt"/>
+      </file>
+    </package>
+    <package name="utils">
+      <metrics statements="1" coveredstatements="1" conditionals="0" coveredconditionals="0" methods="0" coveredmethods="0"/>
+      <file name="buttonsData.js" path="C:\Software Development\GitHub\simple-calculator\src\pages\utils\buttonsData.js">
+        <metrics statements="1" coveredstatements="1" conditionals="0" coveredconditionals="0" methods="0" coveredmethods="0"/>
+        <line num="1" count="1" type="stmt"/>
+      </file>
+    </package>
+  </project>
+</coverage>

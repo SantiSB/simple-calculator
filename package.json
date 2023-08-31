@@ -14,7 +14,8 @@
     "prettier:write": "prettier --write .",
     "lint": "eslint . --ext .js,.jsx",
     "lint:fix": "eslint --fix . --ext .js,.jsx",
-    "test": "jest"
+    "test": "jest",
+    "test:coverage": "jest --coverage"
   },
   "dependencies": {
     "@emotion/react": "^11.11.1",

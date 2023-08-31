@@ -35,6 +35,7 @@ const DisplayScreen = ({ value }) => {
   return (
     <Box
       ref={setContainerRef}
+      data-testId={`container-display-value`}
       sx={{
         display: 'flex',
         alignItems: 'center',
@@ -49,10 +50,10 @@ const DisplayScreen = ({ value }) => {
           height: '3px',
         },
         '&::-webkit-scrollbar-track': {
-          background: `${theme.palette.gray.main}`,
+          background: `${theme.palette.grey.main}`,
         },
         '&::-webkit-scrollbar-thumb': {
-          background: `${theme.palette.white.main}`,
+          background: `${theme.palette.primary.main}`,
           borderRadius: '2px',
         },
       }}

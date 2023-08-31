@@ -18,6 +18,7 @@ const ButtonsContainer = ({ handleButtonClicked }) => {
               <CalculatorButton
                 handleButtonClicked={handleButtonClicked}
                 buttonData={buttonData}
+                dataTestId={`calculator-button-${rowIndex}-${columnIndex}`}
               />
             </Grid>
           ))}

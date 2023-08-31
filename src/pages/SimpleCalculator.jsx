@@ -15,7 +15,7 @@ const SimpleCalculator = () => {
       <Container
         sx={{
           backgroundColor: theme.palette.black.main,
-          color: theme.palette.white.main,
+          color: theme.palette.primary.main,
           display: 'flex',
           flexDirection: 'column',
           justifyContent: 'center',
@@ -27,7 +27,7 @@ const SimpleCalculator = () => {
       >
         <Box
           sx={{
-            border: `2px solid ${theme.palette.gray.main}`,
+            border: `2px solid ${theme.palette.grey.main}`,
             borderRadius: 5,
             maxWidth: '95%',
             maxHeight: '80vh',
