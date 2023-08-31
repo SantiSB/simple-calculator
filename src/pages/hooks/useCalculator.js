@@ -7,7 +7,11 @@ const useCalculator = () => {
 
   const handleEquals = () => {
     try {
-      setOperation(evaluate(operation).toString())
+      const result = evaluate(operation)
+      const formattedResult = Number.isInteger(result)
+        ? result.toString()
+        : result.toFixed(2)
+      setOperation(formattedResult)
     } catch (error) {
       setOpenAlert(true)
     }
