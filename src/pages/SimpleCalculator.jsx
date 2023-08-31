@@ -1,8 +1,9 @@
+import React from 'react'
 import { Box, Container, useTheme } from '@mui/material'
 import Notification from './components/Notification'
-import DisplayScreen from './components/DisplayScreen'
 import useCalculator from './hooks/useCalculator'
 import ButtonsContainer from './components/ButtonsContainer'
+import DisplayScreen from './components/DisplayScreen'
 
 const SimpleCalculator = () => {
   const { operation, handleButtonClicked, openAlert, setOpenAlert } =
@@ -24,6 +25,7 @@ const SimpleCalculator = () => {
           overflow: 'hidden',
           width: 350,
         }}
+        data-testId={'simple-calculator'}
       >
         <Box
           sx={{

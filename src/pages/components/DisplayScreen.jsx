@@ -1,26 +1,21 @@
-import React, { useState, useEffect } from 'react'
+import React, { useEffect, useRef } from 'react'
 import { Typography, Box, useTheme } from '@mui/material'
 
 const DisplayScreen = ({ value }) => {
   const theme = useTheme()
-  const [containerRef, setContainerRef] = useState(null)
+  const containerRef = useRef(null)
 
   useEffect(() => {
-    if (containerRef) {
-      containerRef.scrollLeft =
-        containerRef.scrollWidth - containerRef.clientWidth
+    if (containerRef.current) {
+      containerRef.current.scrollLeft =
+        containerRef.current.scrollWidth - containerRef.current.clientWidth
     }
-
     const handleKeyDown = (event) => {
-      if (containerRef) {
+      if (containerRef.current) {
         if (event.key === 'ArrowLeft') {
-          containerRef.scrollBy({
-            left: -10,
-          })
+          containerRef.current.scrollLeft -= 10 
         } else if (event.key === 'ArrowRight') {
-          containerRef.scrollBy({
-            left: 10,
-          })
+          containerRef.current.scrollLeft += 10 
         }
       }
     }
@@ -30,11 +25,11 @@ const DisplayScreen = ({ value }) => {
     return () => {
       window.removeEventListener('keydown', handleKeyDown)
     }
-  }, [containerRef, value])
+  }, [value])
 
   return (
     <Box
-      ref={setContainerRef}
+      ref={containerRef}
       data-testId={`container-display-value`}
       sx={{
         display: 'flex',
