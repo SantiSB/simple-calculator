@@ -5,6 +5,7 @@ import '@testing-library/jest-dom/extend-expect'
 
 describe('CalculatorButton', () => {
   const buttonData = {
+    label: '7',
     type: 'number',
     value: '7',
   }
