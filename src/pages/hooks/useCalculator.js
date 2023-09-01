@@ -42,8 +42,8 @@ const useCalculator = () => {
   const handleButtonClicked = (buttonData) => {
     const buttonActions = {
       '=': handleEquals,
-      C: handleClear,
-      CE: handleBackspace,
+      'C': handleClear,
+      'CE': handleBackspace,
       '%': handlePercentage,
       '+/-': handleNegate,
       default: () => handleDefault(buttonData.value),

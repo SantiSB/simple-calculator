@@ -26,7 +26,7 @@ const CalculatorButton = ({ handleButtonClicked, buttonData, dataTestId }) => {
       variant='contained'
       onClick={() => handleButtonClicked(buttonData)}
       value={buttonData.value}
-      data-testId={dataTestId}
+      data-testId={buttonData.dataTestId}
     >
       <Typography>{buttonData.label}</Typography>
     </ColorButton>

@@ -6,9 +6,18 @@ import DisplayScreen from './DisplayScreen'
 
 describe('DisplayScreen Component', () => {
   it('renders the value correctly', () => {
-    const value = '0'
+    const value = '10'
     const { getByText } = render(<DisplayScreen value={value} />)
     const displayElement = getByText(value)
+
+    expect(displayElement).toBeInTheDocument()
+  })
+
+  it('renders the operation correctly', () => {
+    const operation = '5+5'
+    const { getByText } = render(<DisplayScreen value={operation} />)
+    const displayElement = getByText(operation)
+
     expect(displayElement).toBeInTheDocument()
   })
 
@@ -19,6 +28,7 @@ describe('DisplayScreen Component', () => {
     const prevScrollLeft = displayScreen.scrollLeft
 
     fireEvent.keyDown(displayScreen, { key: 'ArrowLeft' })
+
     expect(displayScreen.scrollLeft).toBeLessThan(prevScrollLeft)
   })
 
@@ -29,6 +39,7 @@ describe('DisplayScreen Component', () => {
     const scrollLeft = displayScreen.scrollLeft
 
     fireEvent.keyDown(displayScreen, { key: 'ArrowRight' })
+
     expect(displayScreen.scrollLeft).toBeGreaterThan(scrollLeft)
   })
 

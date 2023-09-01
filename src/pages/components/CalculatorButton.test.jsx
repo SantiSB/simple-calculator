@@ -1,40 +1,30 @@
 import React from 'react'
-import { render, fireEvent } from '@testing-library/react'
+import { render, fireEvent, screen } from '@testing-library/react'
 import CalculatorButton from './CalculatorButton'
 import '@testing-library/jest-dom/extend-expect'
 
 describe('CalculatorButton', () => {
-  const buttonData = {
+  const mockedButtonData = {
+    dataTestId: 'dataTestId-7',
     label: '7',
     type: 'number',
     value: '7',
   }
 
-  it('should render the button with the correct label', () => {
-    const { getByText } = render(
-      <CalculatorButton
-        handleButtonClicked={() => {}}
-        buttonData={buttonData}
-      />
-    )
-
-    const buttonElement = getByText('7')
-    expect(buttonElement).toBeInTheDocument()
-  })
-
-  it('should call handleButtonClicked when the button is clicked', () => {
+  it('should call handleButtonClicked once when the button is clicked', () => {
     const handleButtonClickedMock = jest.fn()
 
-    const { getByText } = render(
+    render(
       <CalculatorButton
         handleButtonClicked={handleButtonClickedMock}
-        buttonData={buttonData}
+        buttonData={mockedButtonData}
       />
     )
 
-    const buttonElement = getByText('7')
+    const buttonElement = screen.getByText('7')
     fireEvent.click(buttonElement)
 
-    expect(handleButtonClickedMock).toHaveBeenCalledWith(buttonData)
+    expect(handleButtonClickedMock).toHaveBeenCalledWith(mockedButtonData)
+    expect(handleButtonClickedMock).toHaveBeenCalledTimes(1)
   })
 })

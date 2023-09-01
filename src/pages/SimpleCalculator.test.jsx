@@ -15,15 +15,4 @@ describe('SimpleCalculator', () => {
     const calculatorComponent = screen.getByTestId('simple-calculator')
     expect(calculatorComponent).toBeInTheDocument()
   })
-
-  it('should perform addition correctly', () => {
-    render(
-      <ThemeProvider theme={theme}>
-        <SimpleCalculator />
-      </ThemeProvider>
-    )
-
-    const oneButton = screen.getByText('1')
-    expect(oneButton).toBeInTheDocument()
-  })
 })
