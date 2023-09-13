@@ -65,10 +65,11 @@ Once your pull request is approved and any requested changes are addressed, your
 ## 👨‍💻 Tech Stack:
  | [Vite](https://vitejs.dev/)
  | [React](https://es.react.dev/)
+ | [MUI](https://mui.com/)
+ | [Jest](https://jestjs.io/)
+ | [Testing Library](https://testing-library.com/)
  | [Prettier](https://prettier.io/)
  | [ESLint](https://eslint.org/)
- | [MUI](https://mui.com/)
- |
 
 ## Authors
 [🐱‍💻@SantiSB](https://github.com/SantiSB)
